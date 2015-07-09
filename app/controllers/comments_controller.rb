@@ -12,4 +12,11 @@ class CommentsController < ApplicationController
     render 'new'
   end
  end
+
+ def destroy
+  @question = Question.find(params[:question_id])
+  @comment = @question.comments.find(params[:id])
+  @comment.destroy
+  redirect_to question_path(@question)
+end
 end

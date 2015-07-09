@@ -2,4 +2,5 @@
 
 <%= comment.comment %>
 <%= comment.user.email%>
+<%= link_to "Delete Comment", [comment.question, comment], method: :delete %>
 </div>
