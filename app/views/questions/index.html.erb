@@ -1,6 +1,6 @@
 <h1>THs is question page</h1>
 <% @question.each do |question|%>
-<h2><%= question.title %></h2>
+<h2><%= link_to question.title, question %></h2>
 
 <p>Posted <%= time_ago_in_words(question.created_at) %></p>
 <% end %>
