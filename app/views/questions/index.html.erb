@@ -1,2 +1,8 @@
 <h1>THs is question page</h1>
-<%= render "form"%>
+<% @question.each do |question|%>
+<h2><%= question.title %></h2>
+
+<p>Posted <%= time_ago_in_words(question.created_at) %></p>
+<% end %>
+
+<%= link_to "New Question", new_question_path %>

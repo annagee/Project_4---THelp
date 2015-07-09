@@ -2,9 +2,11 @@ class QuestionsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
+   @question = Question.all.order("created_at DESC")
   end
 
   def show
+   @question = Question.all.order("createdd_at DESC")
      
   end
 
