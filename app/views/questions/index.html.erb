@@ -3,6 +3,7 @@
 <h2><%= link_to question.title, question %></h2>
 
 <p>Posted <%= time_ago_in_words(question.created_at) %></p>
+<p>By<%= question.user %></p>
 <% end %>
 
 <%= link_to "New Question", new_question_path %>
