@@ -11,7 +11,7 @@
 <div id="user_login">
     <% if current_user %>
       Logged in as <%= current_user.email%>
-       <%= lint_to "Log out", destroy_user_session_path, :method => :delete %>
+       <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
        <% else %>
        <%= link_to "Sign_up", new_user_registration_path %>
        or
