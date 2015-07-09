@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  resources :members
+  # resources :members
   resources :questions
-  root 'members#index'
+  root 'questions#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
