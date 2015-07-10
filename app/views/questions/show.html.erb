@@ -1,5 +1,6 @@
 <h1><%= @question.title %> </h1>
 <p><%= @question.content %></p>
+<p><%= @question.tags.name %></p>
 <h2><%= @question.comments.count%>
     <%= render @question.comments%></h2>
  <h3>Reply to thread<%= render "comments/form" %></h3>   

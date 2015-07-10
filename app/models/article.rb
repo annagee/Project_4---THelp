@@ -1,4 +1,4 @@
 class Article < ActiveRecord::Base
   has_many :tags
-  has_many :tags, through: :article_tag
+  has_many :tags, through: :article_tags
 end

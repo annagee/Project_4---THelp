@@ -1,4 +1,4 @@
 class QuestionTag < ActiveRecord::Base
-  belongs_to :questions
+  belongs_to :question
   belongs_to :tag
 end

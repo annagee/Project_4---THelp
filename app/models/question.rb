@@ -1,10 +1,10 @@
 class Question < ActiveRecord::Base
  belongs_to :user
  has_many :comments
- has_many :tags
- has_many :tags, through: :question_tag
+ has_many :question_tags
+ has_many :tags, through: :question_tags
 
-   def all_tags = (names)
+   def all_tags=(names)
       self.tags = names.split(",").map do |name|
        Tag.where(name: name.strip).first_or_create!
      end
@@ -12,5 +12,9 @@ class Question < ActiveRecord::Base
 
    def all_tags
     self.tags.map(&:name).join(",")
-  end
+   end 
+
+    def self.tagged_with(name)
+      Tag.find_by_name!(name).questions 
+    end
 end
