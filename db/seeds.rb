@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Article.all_delete
+Article.destroy_all
+Tag.destroy_all
+Question.destroy_all
 
 article1 = Article.create(header: "Things Patients Have Learned", author:"Jane Bloggs", content: "Why Stop the Thyroid Madness was started 
 
@@ -39,5 +42,23 @@ Granted, you can have a high TSH and finally find out that you are hypothyroid. 
 WHAT IS THE TSH?
 
 In your body, the actual Thyroid Stimulating Hormone (TSH) is synthesized and secreted by your pituitary gland…i.e. it’s a “pituitary” hormone, NOT a thyroid hormone. You can view the TSH like a messenger sent to knock on the door of the thyroid. And its purpose is to regulate your thyroid gland–to tell it to produce more, or to tell it to produce less. In a healthy individual, its message is based on whether your blood levels have too little thyroid hormones to meet the demands of your body, or too much. When the thyroid gland becomes diseased or disabled and fails to do its job adequately (called hypothyroidism), the TSH knocks and knocks on the door, and theoretically, the TSH lab will show a high number. Or, if the thyroid gland gets on its exercise bicycle and overproduces thyroid hormones (called hyperthyroidism), the TSH lab will theoretically go low to show that the TSH in your body isn’t knocking. Occasionally, patients will have a very low TSH (such as 1 or less) along with a low in range free T3, plus with hypothyroid symptoms, and that can point to a problem in the Pituitary gland, called Hypopituitary. The latter is usually due to a diseased pituitary gland, or a problem with the Hypothalamus, which is the organ that sends it’s messenger to the Pituitary. (The Hypothalamus, Pituitary and Thyroid glands make up with is called a Feedback Loop.)")
+
+q1 =Question.create!(title: "blah", content:"stuff")
+q2 =Question.create!(title: "blah2", content:"stuff2")
+q3 =Question.create!(title: "blah3", content:"stuff3")
+
+t1 =Tag.create!(name: "test")
+t2 =Tag.create!(name: "test2")
+t3 =Tag.create!(name: "test3")
+
+q1.question_tags.create!(tag_id: t1.id)
+q1.question_tags.create!(tag_id: t2.id)
+q2.question_tags.create!(tag_id: t1.id)
+q2.question_tags.create!(tag_id: t3.id)
+q3.question_tags.create!(tag_id: t1.id)
+q3.question_tags.create!(tag_id: t3.id)
+
+
+
 
   puts "seeded!"

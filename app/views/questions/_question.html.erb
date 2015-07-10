@@ -1,0 +1,11 @@
+<%= div_for question do %>
+  <div class="large-12 columns border border-box glassy-bg mt pt">
+      <sup class="text-muted">From <%= time_ago_in_words(question.created_at)%></sup><br />
+    <div class="mb pb">
+      <%= h(question.content) %>
+    </div>
+    <div class="tags">
+      <%=raw question.all_tags %>
+    </div>
+  </div>
+<% end %>

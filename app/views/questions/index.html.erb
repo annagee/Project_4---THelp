@@ -1,9 +1,15 @@
 <h1>THs is question page</h1>
-<% @question.each do |question|%>
-<h2><%= link_to question.title, question %></h2>
 
-<p>Posted <%= time_ago_in_words(question.created_at) %></p>
-<p>By<%= question.user %></p>
-<% end %>
 
-<%= link_to "New Question", new_question_path %>
+
+<div class="row mt pt">
+  <div class="large-5 columns">
+    <div class="top-pad glassy-bg">
+      <%= render partial: "questions/new" %>
+    </div>
+  </div>
+  <div class= "large-7 columns" id="questions">
+    <%= render partial: @questions.reverse %>
+  </div>
+</div>
+

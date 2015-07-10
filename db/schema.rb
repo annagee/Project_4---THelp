@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150710110246) do
   enable_extension "plpgsql"
 
   create_table "article_tags", force: :cascade do |t|
-    t.string   "tag_id"
-    t.string   "article_id"
+    t.integer  "tag_id"
+    t.integer  "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20150710110246) do
   end
 
   create_table "question_tags", force: :cascade do |t|
-    t.string   "tag_id"
-    t.string   "question_id"
+    t.integer  "tag_id"
+    t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

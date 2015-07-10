@@ -2,27 +2,31 @@ class QuestionsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  def index
-   @question = Question.all.order("created_at DESC")
+  def index 
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all.order("created_at DESC")
+    end
   end
 
   def show
   
-     
   end
 
   def new
     @question = current_user.questions.build
   end
 
-
   def create
     @question = current_user.questions.build(question_params)
+     respond_to do |format|
 
-    if @question.save
-      redirect_to @question
-    else
-      render 'new'
+      if @question.save
+          format.js
+      else
+        format.html {render root_path}
+      end
   end
 end 
 
