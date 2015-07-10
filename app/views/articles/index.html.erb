@@ -1,0 +1,7 @@
+<h1>this is the articles page</h1>
+<% @article.each do |article| %>
+<h2><%= article.header%></h2>
+<h4> By<%= article.author %></h4>
+<p><%= article.content %></p>
+<% end %>
+
