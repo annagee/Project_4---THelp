@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   resources :articles
+  
   get 'tags/:tag', to: 'questions#index', as: "tag"
 
 

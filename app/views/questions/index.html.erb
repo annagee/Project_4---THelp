@@ -1,18 +1,24 @@
 <h1>THs is question page</h1>
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><%= link_to 'Question', questions_path %></li>
-  <li><%= link_to 'New Question', new_question_path %></li>
-</ul>
 
-<div class="row mt pt">
-  <div class="large-5 columns">
-    <div class="top-pad glassy-bg">
+<!-- <div class="container"> -->
+  <div class= "row" id="questions">
+    <div class=".col-xs.6">
+    <%= render partial: @questions %>
+    </div>  
+   <div class=".col-xs-6">
       <%= render partial: "questions/new" %>
-    </div>
   </div>
-  <div class= "large-7 columns" id="questions">
-    <%= render partial: @questions.reverse %>
+
   </div>
-</div>
+ </div>
+
+  
+
+
+ 
+   
+    
+
+
 
