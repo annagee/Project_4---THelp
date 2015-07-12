@@ -23,7 +23,8 @@ class QuestionsController < ApplicationController
      respond_to do |format|
 
       if @question.save
-          format.js
+          format.js 
+          # looks for create,js.erb in views
       else
         format.html {render root_path}
       end

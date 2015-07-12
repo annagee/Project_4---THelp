@@ -29,6 +29,9 @@ gem 'simple_form'
 
 gem 'rails_admin'
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
