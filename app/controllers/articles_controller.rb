@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-
+  before_action :ensure_admin!, except: [:index, :show]
+  
   def index
    @articles = Article.all
   end
