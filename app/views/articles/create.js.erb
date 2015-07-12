@@ -1,0 +1,4 @@
+var new_article = $("<%= escape_javascript(render(partial: @article))%>").hide();
+$('#articless').prepend(new_post);
+$('#article_<%= @article.id %>').fadeIn('slow');
+$('#new_article')[0].reset();

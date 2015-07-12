@@ -1,7 +1,23 @@
 <h1>this is the articles page</h1>
-<% @article.each do |article| %>
+<% @articles.each do |article| %>
 <h2><%= article.header%></h2>
 <h4> By<%= article.author %></h4>
 <p><%= article.content %></p>
 <% end %>
+<div class="row">
+  <div class="large-8 columns">
+    <%= render partial: "articles/new" %>
+  </div>
+</div>
 
+
+<div class="row mt pt">
+  <div class="large-5 columns">
+    <div class="top-pad glassy-bg">
+      <%= render partial: "articles/new" %>
+    </div>
+  </div>
+  <div class= "large-7 columns" id="articles">
+    <%= render partial: @articles.reverse %>
+  </div>
+</div>
