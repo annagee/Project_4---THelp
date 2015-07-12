@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>This is nav</nav>
+  <%= render 'shared/navigation' %>
+   <div id="main-container" class="container">
+     <div class="row">
+       <div class="col-xs-3">
+         <h3>Thyroid Help</h3>
+       </div>
+   
 
 <div id="user_login">
     <% if current_user %>
@@ -22,9 +28,11 @@
 
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-
-<%= yield %>
-
+      <div class="col-xs-9">
+       <%= yield %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
