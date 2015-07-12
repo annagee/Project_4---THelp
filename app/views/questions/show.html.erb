@@ -1,11 +1,13 @@
-<h1><%= @question.title %> </h1>
-<p><%= @question.content %></p>
-<p><%= raw tag_links(@question.all_tags)%></p> 
+<div class="container">
+  <h1><%= @question.title %> </h1>
+  <p><%= @question.content %></p>
+  <p><%= raw tag_links(@question.all_tags)%></p> 
 
- <h2><%= @question.comments.count%>
-    <%= render @question.comments%></h2>
- <h3>Reply to thread<%= render "comments/form" %></h3>
+   <h4><%= @question.comments.count%></h4>
+      <%= render @question.comments%>
+   <h4>Reply to thread<%= render "comments/form" %></h4>
 
-<%= link_to "edit", edit_question_path(@question) %>
-<%= link_to "delete", question_path(@question), method: :delete, data:{confirm: "are you sure?"} %>
-<%= link_to "home", root_path %> -->
+  <%= link_to "edit", edit_question_path(@question) %>
+  <%= link_to "delete", question_path(@question), method: :delete, data:{confirm: "are you sure?"} %>
+  <%= link_to "home", root_path %> 
+</div>
