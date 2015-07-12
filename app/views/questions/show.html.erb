@@ -4,7 +4,7 @@
   <p><%= raw tag_links(@question.all_tags)%></p> 
 
    <h4><%= @question.comments.count%></h4>
-      <%= render @question.comments%>
+      <p><%= render @question.comments%></p>
    <h4>Reply to thread<%= render "comments/form" %></h4>
 
   <%= link_to "edit", edit_question_path(@question) %>
