@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
         return registered_user
       else
         access_token.provider = "Google"
-        user = User.create(name: data["name"],
+        user = User.create!(name: data["name"],
         provider:access_token.provider,
         email: data["email"],
         uid: access_token.uid,
@@ -29,7 +29,22 @@ class User < ActiveRecord::Base
    end
    
    def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(provider: auth.provider, uid: auth.uid).first
+    return user if user
+
+    new_user = User.create do |u| 
+      u.provider = 'facebook'
+      u.uid = auth.uid
+      u.email = auth.info.email
+      u.password = Devise.friendly_token[0,20]
+      u.admin = false
+    end
+
     
+   end
+
+
+
 
 
 end
