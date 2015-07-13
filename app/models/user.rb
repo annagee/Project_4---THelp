@@ -27,4 +27,9 @@ class User < ActiveRecord::Base
      end    
     end
    end
+   
+   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    
+
+
 end
