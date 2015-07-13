@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :comments
   end
-  root 'questions#index'
+  root 'welcomes#index'
+
+ 
 
   resources :articles
 

@@ -1,8 +1,8 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
    def facebook
-    @user=User.find_for_facebook_oauth(request.env["omniauth.auth"])
-    
+    @user=User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
+
       if @user.persisted?
        session[:sn_user] = request.env['omniauth.params']
        sign_in_and_redirect @user, :event => :authentication 
@@ -14,10 +14,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
    end
 
   def google_oauth2
-    @user=User.find_for_google_oauth2(request.env["omniauth.auth"])
+    @user=User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
-      session[:sn_user] = request.envi['omniauth_params']
+      session[:sn_user] = request.env['omniauth_params']
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
       sign_in_and_redirect @user, :event => :authentication 
     else
