@@ -2,8 +2,8 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
-  require 'omniauth-google-oauth2'
-  config.omniauth :google_oauth2, "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", { access_type: "offline", approval_prompt: "" }
+  
+  config.omniauth :google_oauth2, "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
