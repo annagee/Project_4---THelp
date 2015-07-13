@@ -1,0 +1,2 @@
+module WebsocketrailsHelper
+end

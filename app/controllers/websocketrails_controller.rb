@@ -1,0 +1,2 @@
+class WebsocketrailsController < ApplicationController
+end
