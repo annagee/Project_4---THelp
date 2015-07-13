@@ -32,6 +32,11 @@ gem 'rails_admin'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem 'oauth2'
+gem 'omniauth-google-oauth2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,5 +1,6 @@
 <%= div_for article do %>
   <div class="large-12 columns border border-box glassy-bg mt pt">
+    <strong><%= h(article.header) %></strong><br />
     <strong><%= h(article.author) %></strong><br />
     <sup class="text-muted">From <%= time_ago_in_words(article.created_at)%></sup><br />
     <div class="mb pb">

@@ -1,12 +1,11 @@
 <div class="container">
   <div class="col-xs-6">
-    <h1><%= @question.title %> </h1>
-    <p><%= @question.content %></p>
-     
+    <h1 id="question-title"><%= @question.title %> </h1>
+    <p id="question-layout"><%= @question.content %></p>
       <%= link_to "edit", edit_question_path(@question) %>
-  <%= link_to "delete", question_path(@question), method: :delete, data:{confirm: "are you sure?"} %>
-  <%= link_to "home", root_path %> 
-  <p><%= raw tag_links(@question.all_tags)%></p>
+      <%= link_to "delete", question_path(@question), method: :delete, data:{confirm: "are you sure?"} %>
+      <%= link_to "home", root_path %> 
+    <p><%= raw tag_links(@question.all_tags)%></p>
   </div>
   <div class="col-xs-6">
 

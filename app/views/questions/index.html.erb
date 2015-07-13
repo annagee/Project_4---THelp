@@ -1,13 +1,22 @@
 
 <div class="container">
-   <div class= "row" id="questions">
-    <div class="col-md-6">
+   <!-- <div class= "row" id="questions"> -->
+    <!-- <div class="col-md-6"> -->
+    <table class="table table-hover" id="question-">
+      <thead>
+       <tr>
+         <th> Title </th>
+         <th> User </th>
+         <th> Last Updated </th>
+         </tr>
+      </thead>
      <%= render partial: @questions %>
-    </div>  
-    <div class="col-md-6">
+    </table>
+    <!-- </div>   -->
+    <!-- <div class="col-md-6"> -->
       <%= render partial: "questions/new" %>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
  </div>
 
   
