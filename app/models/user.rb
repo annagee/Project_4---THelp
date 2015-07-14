@@ -2,36 +2,13 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+         :recoverable, :rememberable, :trackable, :validatable
 
    devise :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
   
-   validates :username,
-  :presence => true,
-  :uniqueness => {
-  :case_sensitive => false
-}
-  
-
    has_many :questions 
    has_many :comments
 
-  attr_accessor :username
-  
-
- def self.find_first_by_auth_conditions(warden_conditions)
-  conditions = warden_conditions.dup
-  binding.pry
-  if login = conditions.delete(:login)
-    where(conditions.to_hash).where(["lower(username) = :value OR lower(email) = :value", { :value => username.downcase }]).first
-  else
-    if conditions[:username].nil?
-      where(conditions.to_hash).first
-    else
-      where(username: conditions[:username].to_hash).first
-    end
-  end
-end
 
 
 def self.find_for_facebook_oauth(auth, signed_in_resource = nil)  
@@ -77,6 +54,25 @@ def self.find_for_google_oauth2(access_token, signed_in_resource = nil)
     end
    end
   end
+
+ # ******code needed for the username choice *******
+
+#   attr_accessor :username
+  
+
+#  def self.find_first_by_auth_conditions(warden_conditions)
+#   conditions = warden_conditions.dup
+#   binding.pry
+#   if login = conditions.delete(:login)
+#     where(conditions.to_hash).where(["lower(username) = :value OR lower(email) = :value", { :value => username.downcase }]).first
+#   else
+#     if conditions[:username].nil?
+#       where(conditions.to_hash).first
+#     else
+#       where(username: conditions[:username].to_hash).first
+#     end
+#   end
+# end
 
 
    

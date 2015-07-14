@@ -6,9 +6,7 @@ Devise.setup do |config|
   require 'omniauth-google-oauth2'
 
 
-  config.authentication_keys = [ :login ]
-  config.reset_password_keys = [ :username ]
-  config.confirmation_keys = [ :username ]  
+
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
