@@ -3,7 +3,7 @@
 Devise.setup do |config|
   
   require "omniauth-facebook"
-  require 'omniauth-google-oauth2'
+  # require 'omniauth-google-oauth2'
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -244,21 +244,16 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], 
-  {  
+  {
     scope:  "email"
   }
   
+  
 
 
-  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], 
-  { 
-      :name => "google",
-      :scope => "email",
-      # , profile, plus.me, http://gdata.youtube.com",
-      # :prompt => "select_account"
-      # :image_aspect_ratio => "square",
-      # :image_size => 50
-  }
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
+ 
+
   
 
   # ==> Warden configuration
