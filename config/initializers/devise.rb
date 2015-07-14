@@ -3,12 +3,7 @@
 Devise.setup do |config|
   
   require "omniauth-facebook"
-
-
-  config.authentication_keys =[ :login ]
-
-  config.reset_password_keys = [ :username ]
-  config.confirmation_keys = [ :username ]
+  
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -220,7 +215,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

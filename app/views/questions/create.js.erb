@@ -1,4 +1,4 @@
 var new_question = $("<%= escape_javascript(render(partial: @question))%>").hide();
-$('#questions').prepend(new_post);
+$('#questions').prepend(new_question);
 $('#question_<%= @question.id %>').fadeIn('slow');
 $('#new_question')[0].reset();
