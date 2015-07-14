@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
    devise :omniauthable,  omniauth_providers: [:facebook,  :google_oauth2]     
    has_many :questions 
    has_many :comments  
-
+   attr_accessor :login
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.id).first_or_create do |user|
   #     user.email = auth.info.email
