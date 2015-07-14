@@ -7,7 +7,7 @@
          <tr>
            <%= div_for question do %>
            <td><%= link_to h(question.title), question_path(question) %></td>
-           <td><%= h(current_user.email) %></td>
+           <td><%= h(question.user_id) %></td>
            <td><sup class="text-muted">From <%= time_ago_in_words(question.created_at)%></sup></td>
            <td><%=raw tag_links(question.all_tags)%></td>
            </tr>
