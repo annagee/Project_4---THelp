@@ -29,15 +29,21 @@ gem 'simple_form'
 
 gem 'rails_admin'
 
+# bootstrap gems
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'devise-bootstrap-views'
 
+# social media gems
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'oauth2'
 gem 'omniauth-google-oauth2'
+
+# websockets
 gem 'websocket-rails'
+
+gem 'text_helpers'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

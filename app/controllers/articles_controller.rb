@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    # @article = Article.word_limiter(@article, 50)
   end
   
   def create
