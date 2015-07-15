@@ -44,6 +44,7 @@ gem 'omniauth-google-oauth2'
 gem 'websocket-rails'
 
 gem 'text_helpers'
+gem 'ckeditor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
