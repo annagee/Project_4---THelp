@@ -56,6 +56,6 @@ end
   end 
 
   def question_params
-    params.require(:question).permit(:title, :content, :all_tags)
+    params.require(:question).permit(:title, :content, :user, :all_tags)
   end
 end
