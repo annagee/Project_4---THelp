@@ -2,7 +2,22 @@ RailsAdmin.config do |config|
 
   config.authorize_with do
     redirect_to main_app.root_path unless current_user.admin = true
+
   end
+
+
+
+  config.model Article do
+    edit do
+      # For RailsAdmin >= 0.5.0
+      field :content, :ck_editor
+      # For RailsAdmin < 0.5.0
+      # field :description do
+      #   ckeditor true
+      # end
+    end
+  end
+
 
   ### Popular gems integration
 
