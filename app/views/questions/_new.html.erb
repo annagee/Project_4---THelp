@@ -1,19 +1,16 @@
-
-<div class="container">
- <div class="col-xs-6">
-  <%= form_for(Question.new, remote: true) do |f| %>
-    <div class="large-10 large-centered columns">
+<%= form_for(Question.new, html: {class: "form-group"}) do |f| %>
+  <div class="row text-center">
+    <div class="form-group">
       <%= f.text_field :title, placeholder: "title" %>
     </div>
-    <div class="large-10 large-centered columns">
+    <div class="form-group">
       <%= f.text_area :content, placeholder: "Your question", rows: 5 %>
     </div>
-    <div class="large-10 large-centered columns">
+    <div class="form-group">
       <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
     </div>
-    <div class="large-10 large-centered columns">
+    <div class="form-group">
       <%= f.submit "Post", class: "button"%>
     </div>
-  <% end %>
- </div> 
-</div>
+  </div>
+<% end %>

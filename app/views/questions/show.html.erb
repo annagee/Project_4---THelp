@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-xs-6">
+  <div class="col-xs-9">
     <h1 id="question-title"><%= @question.title %> </h1>
     <p id="question-layout"><%= @question.content %></p>
       <%= link_to "edit", edit_question_path(@question) %>
@@ -12,7 +12,11 @@
       <p><%= render @question.comments%></p>
       </div>
       <div class="col-xs-3">
-     <h4>Reply to thread<%= render "comments/form" %></h4>
+   
+      <h4> Reply to thread</h4>
+
+       <%= render "comments/form" %>
+     
    </div> 
 
 

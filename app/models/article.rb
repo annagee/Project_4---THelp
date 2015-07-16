@@ -2,6 +2,8 @@ class Article < ActiveRecord::Base
   has_many :article_tags
   has_many :tags, through: :article_tags
   mount_uploader :image, AvatarUploader
+  mount_uploader :image, CkeditorAttachmentFileUploader 
+  mount_uploader :image, CkeditorPictureUploader
 
   def all_tags=(names)
     self.tags = names.split(", ").map do |name|

@@ -20,16 +20,14 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.build(question_params)
-     respond_to do |format|
-
+    respond_to do |format|
       if @question.save
-          format.js 
-          # looks for create,js.erb in views
+        format.html { redirect_to questions_path }
       else
-        format.html {render root_path}
+        format.html { render :new }
       end
+    end
   end
-end 
 
   def edit
   end

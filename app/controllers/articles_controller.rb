@@ -26,8 +26,9 @@ end
      respond_to do |format|
       if @article.save
         format.js
-        format.html {redirect_to @article} 
+        # format.html {redirect_to @article} 
       else
+        format.html {render root_path}
       end
      end
   end 
