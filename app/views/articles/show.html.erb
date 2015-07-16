@@ -4,6 +4,7 @@
       <p><%= raw tag_links(@article.all_tags)%></p>
     <p id="article-layout"><%= @article.content %></p>
   
+   <%= render :partial "articles/search_results"%>
   </div>
 
 </div>

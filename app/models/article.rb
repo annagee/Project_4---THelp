@@ -12,4 +12,10 @@ class Article < ActiveRecord::Base
    def all_tags
      self.tags.map(&:name).join(", ") 
     end 
+   
+   def self.search(search)
+    where("header LIKE?", "%#{search}")
+    where("content LIKE?", "%#{search}")
+   end 
+
 end
