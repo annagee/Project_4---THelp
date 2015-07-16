@@ -2,8 +2,14 @@ class ArticlesController < ApplicationController
   # before_action :ensure_admin!, except: [:index, :show]
   
   def index
-   @articles = Article.all
+     @articles = Article.all
+       if params[:search]
+        @articles = Articles.search(params[:search]).orer('created_at DESC')
+      else
+        @articles = Article.all.order('created_at DESC')
+    end
   end
+
 
 
   def show
