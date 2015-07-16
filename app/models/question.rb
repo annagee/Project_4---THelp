@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
  belongs_to :user
- has_many :comments
- has_many :question_tags
+ has_many :comments, dependent: :destroy
+ has_many :question_tags,  dependent: :destroy
  has_many :tags, through: :question_tags
 
    def all_tags=(names)

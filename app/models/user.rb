@@ -15,15 +15,15 @@ def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
   user = User.where(:provider => auth.provider, :uid => auth.uid).first
     if user
      return user
-    else 
-     registered_user = User.where(:email => auth.info.email).first
+    else  
+     registered_user = User.where(:email => email).first
     if registered_user
      return registered_user
     else
       auth.provider = "Facebook"
       user = User.create!(
       provider:auth.provider,
-      email:auth.info.email,
+      email: email,
       password:Devise.friendly_token[0,20],
       )
     end
@@ -33,7 +33,6 @@ end
 def self.find_for_google_oauth2(access_token, signed_in_resource = nil)
       # data = access_token.info
       user = User.where(:provider => access_token.provider, :uid => access_token.uid ).first
-      binding.pry
     if user
       return user
     else
@@ -52,6 +51,8 @@ def self.find_for_google_oauth2(access_token, signed_in_resource = nil)
     end
    end
   end
+
+
 
  # ******code needed for the username choice *******
 
