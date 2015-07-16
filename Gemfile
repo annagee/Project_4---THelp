@@ -44,6 +44,7 @@ gem 'omniauth-google-oauth2'
 gem 'websocket-rails'
 
 gem 'text_helpers'
+gem 'carrierwave'
 
 
 # Use ActiveModel has_secure_password

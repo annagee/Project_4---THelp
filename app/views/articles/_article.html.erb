@@ -1,12 +1,10 @@
-
-
 <%= div_for article do %>
   <div class="large-12 columns border border-box glassy-bg mt pt">
     <h2><strong><%= link_to h(article.header), article_path(article) %></strong></h2><br/>
     <strong><%= h(article.author) %></strong><br/>
     <sup class="text-muted">From <%= time_ago_in_words(article.created_at)%></sup><br />
     <div class="mb pb">
-      <!-- <%= h(article.content) %> -->
+      <%= image_tag article.image%>
     </div>
     <div class="tags">
       <h6>Tags</h6>

@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <%= form_for(Article.new, remote: true) do |f| %>
+  <%= form_for(Article.new) do |f| %>
     <div class="large-10 large-centered columns">
       <%= f.text_field :author, placeholder: "Author name" %>
     </div>
@@ -11,6 +11,9 @@
     </div>
     <div class="large-10 large-centered columns">
       <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
+    </div>
+    <div class="large-10 large-centered columns">
+      <%= f.file_field :image %>
     </div>
     <div class="large-10 large-centered columns">
       <%= f.submit "Article", class: "button"%>
