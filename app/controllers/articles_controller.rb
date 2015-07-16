@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
-  # before_action :ensure_admin!, except: [:index, :show]
-  
+  before_action :ensure_admin!, except: [:index, :show]
+
   def index
+    # binding.pry
      @articles = Article.all
-       if params[:search]
-        @articles = Article.search(params[:search]).order('created_at DESC')
-      else
-        @articles = Article.all.order('created_at DESC')
+    if params[:search]
+      @articles = Article.search(params[:search]).order('created_at DESC')
+    else
+      @articles = Article.all.order('created_at DESC')
     end
   end
 
@@ -17,7 +18,7 @@ end
 
   def show
     @article = Article.find(params[:id])
-    # @article = Article.word_limiter(@article, 50)
+   
   end
   
   def create

@@ -46,6 +46,7 @@ gem 'websocket-rails'
 gem 'text_helpers'
 
 gem 'ckeditor'
+gem 'mini_magick'
 
 gem 'carrierwave'
 
