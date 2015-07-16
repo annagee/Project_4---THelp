@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-xs-10">
     <h1 id="article-header"><%= raw @article.header %></h1>
+    <p><%= raw @article.content %></p>
+
       <p><%= raw tag_links(@article.all_tags)%></p>
 
         <div class="mb pb">
