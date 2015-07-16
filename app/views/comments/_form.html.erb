@@ -1,7 +1,6 @@
- <form>
+
 
    <p><%= simple_form_for ([@question, @question.comments.build]) do |f| %></p>
    <h4><%= f.input :comment %></h4>
    <p><%= f.submit :submit %></p>
    <% end %>
- </form>
