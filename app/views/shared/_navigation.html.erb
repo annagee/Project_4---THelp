@@ -6,18 +6,14 @@
       <a class="navbar-brand" href="/"> Meetups</a>
       <a class="navbar-brand" href="/articles"> Articles</a>
 
-        <div class="form-group">
+        <div class="navbar-form navbar-left">
          <%= form_tag(articles_path, :method => "get", id: "nav-search", class: "navbar-form navbar-left") do %>
-         <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
+         <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %> 
          <%=submit_tag "Search"%>
          <% end %>
         </div>
 
-      <% if @articles.present? %>
-       <%= render @articles %>
-       <% else %>
-       <p> There are no posts containing the term(s) <%= params[:search]%> </p>
-       <% end %>
+
 
     </div>  
   </div>  
