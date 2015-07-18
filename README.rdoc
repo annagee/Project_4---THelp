@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Thelp is a commnunity based app to help and support those with Thyroid conditions. It has been build in Ruby and Rails. 
 
-Things you may want to cover:
+The majority of the site is available to anyone howevr, if you want to add or comment on a question you need to be come a user. There is a login using Devise or Google login. 
 
-* Ruby version
+There is also an admin section which has CKeditor. The site is completely editable via the admin section. It is here that articles can be uploaded. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

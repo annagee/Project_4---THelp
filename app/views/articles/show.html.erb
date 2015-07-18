@@ -1,15 +1,10 @@
 <div class="container">
   <div class="col-xs-10">
     <h1 id="article-header"><%= raw @article.header %></h1>
-
       <p><%= raw tag_links(@article.all_tags)%></p>
-
-        <div class="mb pb">
-      <%= image_tag @article.image%>
-    </div>
+    <!-- <div class="mb pb"> -->
+      <!-- <%= image_tag @article.image%> -->
+    <!-- </div> -->
     <p id="article-layout"><%= raw @article.content %></p>
-
-
   </div>
-
 </div>
